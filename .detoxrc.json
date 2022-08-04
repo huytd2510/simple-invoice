@@ -1,0 +1,27 @@
+{
+  "testRunner": "jest",
+  "runnerConfig": "./detox/e2e/config.json",
+  "skipLegacyWorkersInjection": true,
+  "apps": {
+    "ios": {
+      "name": "SimpleInvoice",
+      "type": "ios.app",
+      "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/SimpleInvoice.app",
+      "build": "xcodebuild -workspace ios/SimpleInvoice.xcworkspace -scheme SimpleInvoice -sdk iphonesimulator -derivedDataPath ios/build EXCLUDED_ARCHS=arm64"
+    }
+  },
+  "devices": {
+    "simulator": {
+      "type": "ios.simulator",
+      "device": {
+        "name": "iPhone 12(14.3)"
+      }
+    }
+  },
+  "configurations": {
+    "ios": {
+      "device": "simulator",
+      "app": "ios"
+    }
+  }
+}
